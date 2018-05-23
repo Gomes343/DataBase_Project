@@ -1,28 +1,28 @@
 package DAO;
 
 import Conexão.Conexao;
-import Model.Cidadao;
+import Model.Comercio;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class CidadaoDAO {
+public class ComercioDAO {
 
     private Conexao conexao;
     
-    public Cidadao cidadao;
+    public Comercio comercio;
     
-    public CidadaoDAO(){
+    public ComercioDAO(){
         conexao = new Conexao();
         conexao.configurar();
     }
     
     
-    public boolean inserir(String nome, int cpf,String regiao, String nascimento, int PaisID){
+    public boolean inserir(String nome, String ramo, String porte, String localização, int SocioID){
         
         //criar a SQL com variaveis
-        String sql = "insert into cidadao(nome,cpf,regiao,nascimento,PaisID)"
-                   + "values('"+ nome +"','"+cpf+"','"+regiao+"','"+nascimento+"','"+PaisID+")";
+        String sql = "insert into comercio(nome,cpf,regiao,nascimento,PaisID)"
+                   + "values('"+ nome +"','"+ramo+"','"+porte+"','"+localização+"','"+SocioID+")";
         
         //conectar com BD
         conexao.conectar();
@@ -37,7 +37,7 @@ public class CidadaoDAO {
     
     public boolean atualizarNome(int id, String nome){
         //criar a SQL com variaveis
-        String sql = "UPDATE Cidadao SET nome = '"+nome+"' where id = "+id;
+        String sql = "UPDATE Comercio SET nome = '"+nome+"' where id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -50,9 +50,9 @@ public class CidadaoDAO {
         
     }
     
-    public boolean atualizarCPF(int id, String cpf){
+    public boolean atualizarRamo(int id, String ramo){
         //criar a SQL com variaveis
-        String sql = "UPDATE Cidadao SET cpf = '"+cpf+"' where id = "+id;
+        String sql = "UPDATE Comercio SET ramo = '"+ramo+"' where id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -65,9 +65,9 @@ public class CidadaoDAO {
         
     }
     
-    public boolean atualizarRegiao(int id, String regiao){
+    public boolean atualizarPorte(int id, String porte){
         //criar a SQL com variaveis
-        String sql = "UPDATE Cidadao SET regiao = '"+regiao+"' where id = "+id;
+        String sql = "UPDATE Comercio SET porte = '"+porte+"' where id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -80,9 +80,9 @@ public class CidadaoDAO {
         
     }
     
-    public boolean atualizarNascimento(int id, String nascimento){
+    public boolean atualizarLocalização(int id, String Localização){
         //criar a SQL com variaveis
-        String sql = "UPDATE Cidadao SET nascimento = '"+nascimento+"' where id = "+id;
+        String sql = "UPDATE Comercio SET Localização = '"+Localização+"' where id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -95,9 +95,9 @@ public class CidadaoDAO {
         
     }
     
-    public boolean atualizarPaisID(int id, int PaisID){
+    public boolean atualizarSocioID(int id, int SocioID){
         //criar a SQL com variaveis
-        String sql = "UPDATE Cidadao SET PaisID = '"+PaisID+"' where id = "+id;
+        String sql = "UPDATE Comercio SET SocioID = '"+SocioID+"' where id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -110,9 +110,9 @@ public class CidadaoDAO {
         
     }
     
-    public boolean apagar(String cpf){
+    public boolean apagar(String nome){
         //criar a SQL com variaveis
-        String sql = "DELETE FROM Cidadao WHERE cpf = "+cpf;
+        String sql = "DELETE FROM Comercio WHERE nome = "+nome;
         
         //conectar com BD
         conexao.conectar();
@@ -124,22 +124,7 @@ public class CidadaoDAO {
         return b;     
             
     }
-   
-    public boolean apagarCPF(String cpf){
-        //criar a SQL com variaveis
-        String sql = "DELETE FROM cliente WHERE cpf = "+cpf+";";
-        
-        //conectar com BD
-        conexao.conectar();
-
-        //enviar SQL para banco de dados
-        boolean b = conexao.executarComandosSQL(sql);
-        
-        //retornar erro ou ok 
-        return b;     
-            
-    }
- 
+   /*
     public  ArrayList<Cidadao> pesquisa() throws SQLException{
 
 
@@ -167,6 +152,6 @@ public class CidadaoDAO {
           }
 
       return lista;
-  }
+  }*/
 
 }

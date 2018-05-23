@@ -1,5 +1,7 @@
 package Model;
 
+import DAO.CidadaoDAO;
+import DAO.ComercioDAO;
 import Model.*;
 
 public class Comercio{
@@ -11,47 +13,19 @@ public class Comercio{
     private String porte;
     private String localização;
     private int SocioID;
+    private ComercioDAO dao = new ComercioDAO();
     
     //private ClienteDAO dao = new ClienteDAO();// mesmo ele ja inicializado aqui
     //ele ainda nao existe na memoria, ai construtor já cria ele!
 
-    public Comercio(int id, String nome, String ramo, String porte, String localização, int SocioID) {
-        this.id = id;
+    public Comercio(String nome, String ramo, String porte, String localização, int SocioID) {
         this.nome = nome;
         this.ramo = ramo;
         this.porte = porte;
         this.localização = localização;
         this.SocioID = SocioID;
+        dao = new ComercioDAO();
     }
-  
-    //public boolean enviar(){
-       // boolean b = dao.inserir(this.getNome(),this.getCpf());
-       // return b;
-    //}
-
-    /*
-    public void inserir(String nome, String cpf){
-        dao.inserir(nome, cpf);
-    }               //metodo feio mas funfa
-    
-    
-    public static void main(String[]args){
-        Cliente cliente = new Cliente("Jose","12345678911");
-        cliente.setNome("José");
-        cliente.setCpf("12345678911");
-        ClienteDAO dao = new ClienteDAO();
-        
-        boolean b = dao.inserir(cliente.getNome(),cliente.getCpf());
-        
-        if(b){
-            System.out.println("Inserido com Sucesso");
-        }else{
-            System.out.println("Erro");
-        }
-        
-        
-        
-    }*/
 
     public int getId() {
         return id;

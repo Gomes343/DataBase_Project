@@ -1,28 +1,43 @@
 package DAO;
 
 import Conexão.Conexao;
-import Model.Cidadao;
+import Model.Governo;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class CidadaoDAO {
+public class GovernoDAO {
 
     private Conexao conexao;
     
-    public Cidadao cidadao;
+    public Governo governo;
     
-    public CidadaoDAO(){
+    public GovernoDAO(){
         conexao = new Conexao();
         conexao.configurar();
     }
     
     
-    public boolean inserir(String nome, int cpf,String regiao, String nascimento, int PaisID){
+    public boolean inserir(String partido, String ideologia, String cargos, int PaisID){
         
         //criar a SQL com variaveis
-        String sql = "insert into cidadao(nome,cpf,regiao,nascimento,PaisID)"
-                   + "values('"+ nome +"','"+cpf+"','"+regiao+"','"+nascimento+"','"+PaisID+")";
+        String sql = "insert into Governo(partido, ideologia, cargos, PaisID)"
+                   + "values('"+partido+"','"+ideologia+"','"+cargos+"','"+PaisID+")";
+        
+        //conectar com BD
+        conexao.conectar();
+
+        //enviar SQL para banco de dados
+        boolean b = conexao.executarComandosSQL(sql);
+        
+        //retornar erro ou ok 
+        return b;     
+        
+    }
+ 
+    public boolean atualizarPartido(int id, String Partido){
+        //criar a SQL com variaveis
+        String sql = "UPDATE Economia SET partido = '"+Partido+"' where id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -35,9 +50,9 @@ public class CidadaoDAO {
         
     }
     
-    public boolean atualizarNome(int id, String nome){
+    public boolean atualizarIdeologia(int id, String Ideologia){
         //criar a SQL com variaveis
-        String sql = "UPDATE Cidadao SET nome = '"+nome+"' where id = "+id;
+        String sql = "UPDATE Economia SET ideologia = '"+Ideologia+"' where id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -50,39 +65,9 @@ public class CidadaoDAO {
         
     }
     
-    public boolean atualizarCPF(int id, String cpf){
+    public boolean atualizarCargos(int id, String Cargos){
         //criar a SQL com variaveis
-        String sql = "UPDATE Cidadao SET cpf = '"+cpf+"' where id = "+id;
-        
-        //conectar com BD
-        conexao.conectar();
-
-        //enviar SQL para banco de dados
-        boolean b = conexao.executarComandosSQL(sql);
-        
-        //retornar erro ou ok 
-        return b;     
-        
-    }
-    
-    public boolean atualizarRegiao(int id, String regiao){
-        //criar a SQL com variaveis
-        String sql = "UPDATE Cidadao SET regiao = '"+regiao+"' where id = "+id;
-        
-        //conectar com BD
-        conexao.conectar();
-
-        //enviar SQL para banco de dados
-        boolean b = conexao.executarComandosSQL(sql);
-        
-        //retornar erro ou ok 
-        return b;     
-        
-    }
-    
-    public boolean atualizarNascimento(int id, String nascimento){
-        //criar a SQL com variaveis
-        String sql = "UPDATE Cidadao SET nascimento = '"+nascimento+"' where id = "+id;
+        String sql = "UPDATE Economia SET Cargos = '"+Cargos+"' where id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -97,7 +82,7 @@ public class CidadaoDAO {
     
     public boolean atualizarPaisID(int id, int PaisID){
         //criar a SQL com variaveis
-        String sql = "UPDATE Cidadao SET PaisID = '"+PaisID+"' where id = "+id;
+        String sql = "UPDATE Economia SET PaisID = '"+PaisID+"' where id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -110,9 +95,9 @@ public class CidadaoDAO {
         
     }
     
-    public boolean apagar(String cpf){
+    public boolean apagar(int id){
         //criar a SQL com variaveis
-        String sql = "DELETE FROM Cidadao WHERE cpf = "+cpf;
+        String sql = "DELETE FROM Governo WHERE id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -124,22 +109,7 @@ public class CidadaoDAO {
         return b;     
             
     }
-   
-    public boolean apagarCPF(String cpf){
-        //criar a SQL com variaveis
-        String sql = "DELETE FROM cliente WHERE cpf = "+cpf+";";
-        
-        //conectar com BD
-        conexao.conectar();
-
-        //enviar SQL para banco de dados
-        boolean b = conexao.executarComandosSQL(sql);
-        
-        //retornar erro ou ok 
-        return b;     
-            
-    }
- 
+   /*
     public  ArrayList<Cidadao> pesquisa() throws SQLException{
 
 
@@ -167,6 +137,6 @@ public class CidadaoDAO {
           }
 
       return lista;
-  }
+  }*/
 
 }

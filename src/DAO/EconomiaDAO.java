@@ -1,28 +1,28 @@
 package DAO;
 
 import Conexão.Conexao;
-import Model.Cidadao;
+import Model.Economia;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class CidadaoDAO {
+public class EconomiaDAO {
 
     private Conexao conexao;
     
-    public Cidadao cidadao;
+    public Economia economia;
     
-    public CidadaoDAO(){
+    public EconomiaDAO(){
         conexao = new Conexao();
         conexao.configurar();
     }
     
     
-    public boolean inserir(String nome, int cpf,String regiao, String nascimento, int PaisID){
+    public boolean inserirC(String BolsadeValores, Double cotacao, int idComercio){
         
         //criar a SQL com variaveis
-        String sql = "insert into cidadao(nome,cpf,regiao,nascimento,PaisID)"
-                   + "values('"+ nome +"','"+cpf+"','"+regiao+"','"+nascimento+"','"+PaisID+")";
+        String sql = "insert into comercio(BolsadeValores, cotacao, idComercio)"
+                   + "values('"+ BolsadeValores +"','"+cotacao+"','"+idComercio+")";
         
         //conectar com BD
         conexao.conectar();
@@ -35,9 +35,11 @@ public class CidadaoDAO {
         
     }
     
-    public boolean atualizarNome(int id, String nome){
+    public boolean inserirI(String BolsadeValores, Double cotacao, int idIndustria){
+        
         //criar a SQL com variaveis
-        String sql = "UPDATE Cidadao SET nome = '"+nome+"' where id = "+id;
+        String sql = "insert into comercio(BolsadeValores, cotacao, idIndustria)"
+                   + "values('"+ BolsadeValores +"','"+cotacao+"','"+idIndustria+")";
         
         //conectar com BD
         conexao.conectar();
@@ -50,9 +52,9 @@ public class CidadaoDAO {
         
     }
     
-    public boolean atualizarCPF(int id, String cpf){
+    public boolean atualizarBolsadeValores(int id, String BolsadeValores){
         //criar a SQL com variaveis
-        String sql = "UPDATE Cidadao SET cpf = '"+cpf+"' where id = "+id;
+        String sql = "UPDATE Economia SET BolsadeValores = '"+BolsadeValores+"' where id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -65,9 +67,9 @@ public class CidadaoDAO {
         
     }
     
-    public boolean atualizarRegiao(int id, String regiao){
+    public boolean atualizarCotacao(int id, Double Cotacao){
         //criar a SQL com variaveis
-        String sql = "UPDATE Cidadao SET regiao = '"+regiao+"' where id = "+id;
+        String sql = "UPDATE Economia SET Cotacao = '"+Cotacao+"' where id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -80,9 +82,9 @@ public class CidadaoDAO {
         
     }
     
-    public boolean atualizarNascimento(int id, String nascimento){
+    public boolean atualizarIdComercio(int id, int IdComercio){
         //criar a SQL com variaveis
-        String sql = "UPDATE Cidadao SET nascimento = '"+nascimento+"' where id = "+id;
+        String sql = "UPDATE Economia SET IdComercio = '"+IdComercio+"' where id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -95,9 +97,9 @@ public class CidadaoDAO {
         
     }
     
-    public boolean atualizarPaisID(int id, int PaisID){
+    public boolean atualizarIdIndustria(int id, int IdIndustria){
         //criar a SQL com variaveis
-        String sql = "UPDATE Cidadao SET PaisID = '"+PaisID+"' where id = "+id;
+        String sql = "UPDATE Economia SET IdIndustria = '"+IdIndustria+"' where id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -110,9 +112,9 @@ public class CidadaoDAO {
         
     }
     
-    public boolean apagar(String cpf){
+    public boolean apagar(int id){
         //criar a SQL com variaveis
-        String sql = "DELETE FROM Cidadao WHERE cpf = "+cpf;
+        String sql = "DELETE FROM Economia WHERE id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -124,22 +126,7 @@ public class CidadaoDAO {
         return b;     
             
     }
-   
-    public boolean apagarCPF(String cpf){
-        //criar a SQL com variaveis
-        String sql = "DELETE FROM cliente WHERE cpf = "+cpf+";";
-        
-        //conectar com BD
-        conexao.conectar();
-
-        //enviar SQL para banco de dados
-        boolean b = conexao.executarComandosSQL(sql);
-        
-        //retornar erro ou ok 
-        return b;     
-            
-    }
- 
+   /*
     public  ArrayList<Cidadao> pesquisa() throws SQLException{
 
 
@@ -167,6 +154,6 @@ public class CidadaoDAO {
           }
 
       return lista;
-  }
+  }*/
 
 }

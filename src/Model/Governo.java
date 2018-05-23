@@ -54,7 +54,7 @@ public class Governo{
     //private ClienteDAO dao = new ClienteDAO();// mesmo ele ja inicializado aqui
     //ele ainda nao existe na memoria, ai construtor já cria ele!
 
-    public Governo(int id, String partido, String ideologia, String cargos, int PaisID) {
+    public Governo(String partido, String ideologia, String cargos, int PaisID) {
         this.id = id;
         this.partido = partido;
         this.ideologia = ideologia;

@@ -11,14 +11,13 @@ public class Economia{
     private int idComercio;
     private int idIndustria;
 
-    public Economia(int id, String BolsadeValores, Double cotacao, int idComercio) {
-        this.id = id;
+    public Economia(String BolsadeValores, Double cotacao, int idComercio) {
         this.BolsadeValores = BolsadeValores;
         this.cotacao = cotacao;
         this.idComercio = idComercio;
     }
   
-    public Economia(int id, int idIndustria, String BolsadeValores, Double cotacao) {
+    public Economia(int idIndustria, String BolsadeValores, Double cotacao) {
         this.id = id;
         this.BolsadeValores = BolsadeValores;
         this.cotacao = cotacao;
