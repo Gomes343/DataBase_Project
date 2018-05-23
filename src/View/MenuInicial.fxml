@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="243.0" prefWidth="274.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuInicialController">
+   <children>
+      <Button fx:id="buttonInsert" layoutX="76.0" layoutY="61.0" mnemonicParsing="false" onAction="#buttonInsert" prefHeight="25.0" prefWidth="123.0" text="Módulo Insert" />
+      <Button fx:id="buttonDelete" layoutX="76.0" layoutY="105.0" mnemonicParsing="false" onAction="#buttonDelete" prefHeight="25.0" prefWidth="123.0" text="Módulo Delete" />
+      <Button fx:id="buttonUpdate" layoutX="76.0" layoutY="153.0" mnemonicParsing="false" onAction="#buttonUpdate" prefHeight="25.0" prefWidth="123.0" text="Módulo Update" />
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="274.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Módulos do Projeto">
+            <items>
+              <MenuItem fx:id="Pais" mnemonicParsing="false" onAction="#ModuloPais" text="Pais" />
+                  <MenuItem fx:id="Governo" mnemonicParsing="false" onAction="#ModuloGoverno" text="Governo" />
+                  <MenuItem fx:id="Cidadao" mnemonicParsing="false" onAction="#ModuloCidadão" text="Cidadão" />
+                  <MenuItem fx:id="Comercio" mnemonicParsing="false" onAction="#ModuloComercio" text="Comércio" />
+                  <MenuItem fx:id="Industria" mnemonicParsing="false" onAction="#ModuloIndustria" text="Industria" />
+                  <MenuItem fx:id="Economia" mnemonicParsing="false" onAction="#ModuloEconomia" text="Economia" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="About">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Text layoutX="14.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Projeto de Banco de Dados" />
+      <Text layoutX="14.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Murilo Gomes Teixeira 1700677" />
+      <Text layoutX="14.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gabriel de Freitas" />
+      <Text layoutX="26.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu Inicial do Módulo: " />
+      <Text fx:id="textChoice" layoutX="159.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indefinido" />
+   </children>
+</AnchorPane>
