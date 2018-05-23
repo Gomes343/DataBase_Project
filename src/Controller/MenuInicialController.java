@@ -27,6 +27,7 @@ import javafx.stage.Stage;
  */
 public class MenuInicialController implements Initializable {
     private String caminho = "";
+    boolean choice = false;
     
     @FXML private Button buttonInsert;
     @FXML private Button buttonDelete;
@@ -43,30 +44,39 @@ public class MenuInicialController implements Initializable {
     @FXML private void ModuloPais(ActionEvent event) {
         textChoice.setText("Pais");
         caminho = "/View/Pais";
+        choice = true;
     }
     
     @FXML private void ModuloGoverno(ActionEvent event) {
         textChoice.setText("Governo");
         caminho = "/View/Governo";
+        choice = true;
     }
     @FXML private void ModuloCidadão(ActionEvent event) {
         textChoice.setText("Cidadão");
         caminho = "/View/Cidadao";
+        choice = true;
     }
     @FXML private void ModuloComercio(ActionEvent event) {
         textChoice.setText("Comercio");
         caminho = "/View/Comercio";
+        choice = true;
     }
     @FXML private void ModuloIndustria(ActionEvent event) {
         textChoice.setText("Industria");
         caminho = "/View/Industria";
+        choice = true;
     }
     @FXML private void ModuloEconomia(ActionEvent event) {
         textChoice.setText("Economia");
         caminho = "/View/Economia";
+        choice = true;
     }
     
     @FXML private void buttonInsert(ActionEvent event) {
+        if(choice == false){
+            textChoice.setText("Escolha na aba!");
+        }else{        
         caminho = caminho.concat("InsertView.fxml");
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
@@ -80,10 +90,13 @@ public class MenuInicialController implements Initializable {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-        
+        }
     }
   
     @FXML private void buttonDelete(ActionEvent event) {
+        if(choice == false){
+            textChoice.setText("Escolha na aba!");
+        }else{    
         caminho = caminho.concat("DeleteView.fxml");
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
@@ -97,10 +110,13 @@ public class MenuInicialController implements Initializable {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-        
+        }
     }
     
     @FXML private void buttonUpdate(ActionEvent event) {
+        if(choice == false){
+            textChoice.setText("Escolha na aba!");
+        }else{    
         caminho = caminho.concat("UpdateView.fxml");
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
@@ -114,7 +130,7 @@ public class MenuInicialController implements Initializable {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-        
+        }
     }
     
     @Override

@@ -24,21 +24,11 @@
                   <MenuItem fx:id="Economia" mnemonicParsing="false" onAction="#ModuloEconomia" text="Economia" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="About">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
         </menus>
       </MenuBar>
       <Text layoutX="14.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Projeto de Banco de Dados" />
       <Text layoutX="14.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Murilo Gomes Teixeira 1700677" />
-      <Text layoutX="14.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gabriel de Freitas" />
+      <Text layoutX="14.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gabriel de Freitas Santos 1704435" />
       <Text layoutX="26.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu Inicial do Módulo: " />
       <Text fx:id="textChoice" layoutX="159.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indefinido" />
    </children>

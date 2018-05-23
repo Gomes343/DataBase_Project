@@ -95,9 +95,9 @@ public class GovernoDAO {
         
     }
     
-    public boolean apagar(int id){
+    public boolean apagar(String partido){
         //criar a SQL com variaveis
-        String sql = "DELETE FROM Governo WHERE id = "+id;
+        String sql = "DELETE FROM Governo WHERE partido = "+partido;
         
         //conectar com BD
         conexao.conectar();

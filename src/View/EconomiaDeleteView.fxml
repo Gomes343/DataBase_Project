@@ -7,13 +7,13 @@
 
 <AnchorPane id="AnchorPane" prefHeight="204.0" prefWidth="252.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.EconomiaDeleteController">
     <children>
-        <Button fx:id="button" layoutX="97.0" layoutY="167.0" onAction="#Apagar" prefHeight="25.0" prefWidth="59.0" text="Deletar" />
-      <Label fx:id="label01" alignment="CENTER" layoutY="9.0" prefHeight="17.0" prefWidth="252.0" text="Delete de Economia" textAlignment="CENTER" />
+        <Button fx:id="buttonDeletar" layoutX="97.0" layoutY="167.0" onAction="#Apagar" prefHeight="25.0" prefWidth="59.0" text="Deletar" />
+      <Label alignment="CENTER" layoutY="9.0" prefHeight="17.0" prefWidth="252.0" text="Delete de Economia" textAlignment="CENTER" />
       <TextField fx:id="textField01" layoutX="19.0" layoutY="47.0" />
-      <Label fx:id="label03" layoutX="180.0" layoutY="51.0" text="ID" />
+      <Label layoutX="180.0" layoutY="51.0" text="ID" />
       <Button fx:id="buttonVoltar" layoutX="171.0" layoutY="167.0" onAction="#Voltar" prefHeight="25.0" prefWidth="59.0" text="Voltar" />
       <Label fx:id="label04" alignment="CENTER" layoutY="132.0" prefHeight="17.0" prefWidth="252.0" />
       <Button fx:id="buttonConsultar" layoutX="16.0" layoutY="167.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="67.0" text="Consultar" />
-      <Label fx:id="label02" layoutX="20.0" layoutY="80.0" lineSpacing="1.0" prefHeight="44.0" prefWidth="214.0" text="AVISO: O ID informado será deletado definitivamente!" wrapText="true" />
+      <Label layoutX="20.0" layoutY="80.0" lineSpacing="1.0" prefHeight="44.0" prefWidth="214.0" text="AVISO: O ID informado será deletado definitivamente!" wrapText="true" />
     </children>
 </AnchorPane>

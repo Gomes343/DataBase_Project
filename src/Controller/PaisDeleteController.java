@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import DAO.PaisDAO;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -29,7 +30,7 @@ import javafx.stage.Stage;
  */
 public class PaisDeleteController implements Initializable {
     
-    @FXML private Label Result;
+    @FXML private Label label01;
     @FXML private TextField textField01;
     @FXML private Button buttonDeletar;
     @FXML private Button buttonVoltar;
@@ -52,8 +53,17 @@ public class PaisDeleteController implements Initializable {
         stage.show();
 }
     
-    @FXML private void Deletar(ActionEvent event) {
-       Result.setText("que");
+    @FXML private void Apagar(ActionEvent event) {
+        String nome = textField01.getText();
+        PaisDAO dao = new PaisDAO();
+        
+        
+        if(dao.apagar(nome)){
+            label01.setText("nome encontrado e apagado com Sucesso!");
+        }else{
+            label01.setText("nome Inexistente ou incorreto!");
+            textField01.setText("");
+        }
     }
     
     @Override

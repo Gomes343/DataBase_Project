@@ -1,5 +1,6 @@
 package Model;
 
+import DAO.PaisDAO;
 import Model.*;
 
 public class Pais{
@@ -9,12 +10,14 @@ public class Pais{
     private String idioma;
     private String localização;
     private String território;
+    private PaisDAO dao = new PaisDAO();
     
     //private ClienteDAO dao = new ClienteDAO();// mesmo ele ja inicializado aqui
     //ele ainda nao existe na memoria, ai construtor já cria ele!
 
     public Pais(String nome, String idioma, String localização, String território){  //inicializando os contrutores
-        //dao = new ClienteDAO();
+        dao = new PaisDAO();
+        
         this.nome = nome;
         this.idioma = idioma;
         this.localização = localização;

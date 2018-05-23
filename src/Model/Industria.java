@@ -1,38 +1,27 @@
 package Model;
 
+import DAO.IndustriaDAO;
 import Model.*;
 
 public class Industria{
 
-
     private int id;
     private String nome;
-    private String cpf;
-    //private ClienteDAO dao = new ClienteDAO();// mesmo ele ja inicializado aqui
-    //ele ainda nao existe na memoria, ai construtor já cria ele!
+    private String ramo;
+    private String porte;
+    private String localização;
+    private int InvestidoresID;
+    private IndustriaDAO dao = new IndustriaDAO();
 
-    public Industria(String nome, String cpf){  //inicializando os contrutores
-        //dao = new ClienteDAO();
+    public Industria(String nome, String ramo, String porte, String localização, int InvestidoresID) {
+        dao = new IndustriaDAO();
         this.nome = nome;
-        this.cpf = cpf;
+        this.ramo = ramo;
+        this.porte = porte;
+        this.localização = localização;
+        this.InvestidoresID = InvestidoresID;
     }
-    
-    public boolean verificar(){
-        if(cpf.length()!=11){
-            return false;
-        }else{
-        if(nome.length() < 5 ){
-            return false;
-        }
-        }
-        return true;
-    }
-    
-    //public boolean enviar(){
-       // boolean b = dao.inserir(this.getNome(),this.getCpf());
-       // return b;
-    //}
-    
+
     public int getId() {
         return id;
     }
@@ -49,35 +38,47 @@ public class Industria{
         this.nome = nome;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getRamo() {
+        return ramo;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setRamo(String ramo) {
+        this.ramo = ramo;
     }
-    /*
-    public void inserir(String nome, String cpf){
-        dao.inserir(nome, cpf);
-    }               //metodo feio mas funfa
-    
-    
-    public static void main(String[]args){
-        Cliente cliente = new Cliente("Jose","12345678911");
-        cliente.setNome("José");
-        cliente.setCpf("12345678911");
-        ClienteDAO dao = new ClienteDAO();
-        
-        boolean b = dao.inserir(cliente.getNome(),cliente.getCpf());
-        
-        if(b){
-            System.out.println("Inserido com Sucesso");
-        }else{
-            System.out.println("Erro");
-        }
-        
-        
-        
-    }*/
 
+    public String getPorte() {
+        return porte;
+    }
+
+    public void setPorte(String porte) {
+        this.porte = porte;
+    }
+
+    public String getLocalização() {
+        return localização;
+    }
+
+    public void setLocalização(String localização) {
+        this.localização = localização;
+    }
+
+    public int getInvestidoresID() {
+        return InvestidoresID;
+    }
+
+    public void setInvestidoresID(int InvestidoresID) {
+        this.InvestidoresID = InvestidoresID;
+    }
+
+    public IndustriaDAO getDao() {
+        return dao;
+    }
+
+    public void setDao(IndustriaDAO dao) {
+        this.dao = dao;
+    }
+    
+    
+    
+   
 }

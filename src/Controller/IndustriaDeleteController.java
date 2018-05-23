@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import DAO.IndustriaDAO;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -31,11 +32,8 @@ public class IndustriaDeleteController implements Initializable {
     
     
     @FXML private Label label01;
-    @FXML private Label label02;
-    @FXML private Label label03;
-    @FXML private Label label04;
     @FXML private TextField textField01;
-    @FXML private Button button;
+    @FXML private Button buttonDeletar;
     @FXML private Button buttonVoltar;
     @FXML private Button buttonConsultar;
     
@@ -57,7 +55,16 @@ public class IndustriaDeleteController implements Initializable {
 }
     
     @FXML private void Apagar(ActionEvent event) {
-       
+        String nome = textField01.getText();
+        IndustriaDAO dao = new IndustriaDAO();
+        
+        
+        if(dao.apagar(nome)){
+            label01.setText("Nome encontrado e apagado com Sucesso!");
+        }else{
+            label01.setText("Nome Inexistente ou incorreto!");
+            textField01.setText("");
+        }
     }
     
     @Override
