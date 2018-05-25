@@ -18,11 +18,11 @@ public class CidadaoDAO {
     }
     
     
-    public boolean inserir(String nome, int cpf,String regiao, String nascimento, int PaisID){
+    public boolean inserir(String cpf, String nome,String regiao, String nascimento, int PaisID){
         
         //criar a SQL com variaveis
-        String sql = "insert into cidadao(nome,cpf,regiao,nascimento,PaisID)"
-                   + "values('"+ nome +"','"+cpf+"','"+regiao+"','"+nascimento+"','"+PaisID+")";
+        String sql = "insert into Cidadao(cpf,nome,regiao,nascimento,PaisID)"
+                   + "values('"+ cpf +"','"+nome+"','"+regiao+"','"+nascimento+"','"+PaisID+"')";
         
         //conectar com BD
         conexao.conectar();
@@ -153,7 +153,7 @@ public class CidadaoDAO {
               while(rs.next()){
                   Cidadao cidadao = new Cidadao();
 
-                  cidadao.setCpf(rs.getInt("cpf"));
+                  cidadao.setCpf(rs.getString("cpf"));
                   cidadao.setNome(rs.getString("nome"));
                   cidadao.setRegiao(rs.getString("regiao"));
                   cidadao.setNascimento(rs.getString("nascimento"));

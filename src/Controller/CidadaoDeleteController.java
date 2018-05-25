@@ -24,12 +24,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-/**
- *
- * @author a1700677
- */
 public class CidadaoDeleteController implements Initializable {
-    
     
     @FXML private Label label01;
     @FXML private TextField textField01;

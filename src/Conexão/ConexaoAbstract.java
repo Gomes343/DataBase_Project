@@ -63,6 +63,7 @@ public abstract class ConexaoAbstract implements IConexao{
         try {
             //String url      = "jdbc:postgresql://localhost:5432/jaime";
             conexao = "jdbc:%s://%s:%s/%s?user=%s&password=%s";
+            //conexao = "jdbc:mysql://br28.hostgator.com.br:3306/gtcon073_projeto?zeroDateTimeBehavior=convertToNull";
             conexao = String.format(conexao, dbms,  ip, port, base, usr, pwd);
             con = DriverManager.getConnection(conexao, usr, pwd);
             con.setAutoCommit(true);

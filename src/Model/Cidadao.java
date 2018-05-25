@@ -6,22 +6,21 @@ import Model.*;
 public class Cidadao{
 
 
-    private int cpf;
+    private String cpf;
     private String nome;
     private String regiao;
     private String nascimento;
     private int PaisID;
-    private CidadaoDAO dao = new CidadaoDAO();
-    
+        CidadaoDAO dao = new CidadaoDAO();    
     
     //private ClienteDAO dao = new ClienteDAO();// mesmo ele ja inicializado aqui
     //ele ainda nao existe na memoria, ai construtor já cria ele!
 
     public Cidadao(){
-        dao = new CidadaoDAO();
+        CidadaoDAO dao = new CidadaoDAO();
     }
-    public Cidadao(String nome, int cpf,String regiao, String nascimento, int PaisID){  //inicializando os contrutores
-        dao = new CidadaoDAO();
+    public Cidadao(String cpf, String nome,String regiao, String nascimento, int PaisID){  //inicializando os contrutores
+        CidadaoDAO dao = new CidadaoDAO();
         this.nome = nome;
         this.cpf = cpf;
         this.regiao = regiao;
@@ -30,15 +29,15 @@ public class Cidadao{
     }
     
     public boolean enviar(){
-        boolean b = dao.inserir(nome, cpf, regiao, nascimento, PaisID);
+        boolean b = dao.inserir(cpf, nome, regiao, nascimento, PaisID);
         return b;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
