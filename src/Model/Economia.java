@@ -4,7 +4,6 @@ import Model.*;
 
 public class Economia{
 
-
     private int id;
     private String BolsadeValores;
     private Double cotacao;

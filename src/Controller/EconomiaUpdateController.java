@@ -1,5 +1,6 @@
 package Controller;
 
+import DAO.EconomiaDAO;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -31,41 +32,41 @@ public class EconomiaUpdateController implements Initializable {
     @FXML private TextField textField03;
     @FXML private TextField textField04;
     @FXML private TextField textField05;
-    @FXML private TextField textField06;
-    @FXML private Button UpdateCPF;
-    @FXML private Button UpdateNome;
-    @FXML private Button UpdateRegiao;
-    @FXML private Button UpdateNascimento;
-    @FXML private Button UpdatePaisID;
+    @FXML private Button UpdateBolsa;
+    @FXML private Button UpdateCotacao;
+    @FXML private Button UpdateIdComercio;
+    @FXML private Button UpdateIdIndustria;
     @FXML private Button buttonVoltar;
     @FXML private Button buttonConsultar;
     
-    EconomiaDAO dao = new CidadaoDAO();
+    EconomiaDAO dao = new EconomiaDAO();
     
-    @FXML private void UpdateCPF(ActionEvent event) {
+    @FXML private void UpdateBolsa(ActionEvent event) {
         if(textField01.getText() != null){
             int id = Integer.parseInt(textField01.getText());
-            if(dao.atualizarCPF(id, textField02.getText()))            
+            if(dao.atualizarBolsadeValores(id, textField02.getText()))            
                 label01.setText(("Cadastro Atualizado com sucesso!"));
         }else{
             label01.setText(("ID invalido!"));
         }
     }
     
-    @FXML private void UpdateNome(ActionEvent event) {
+    @FXML private void UpdateCotacao(ActionEvent event) {
         if(textField01.getText() != null){
             int id = Integer.parseInt(textField01.getText());
-            if(dao.atualizarNome(id, textField03.getText()))            
+            double d = Double.parseDouble(textField03.getText());
+            if(dao.atualizarCotacao(id, d))            
                 label01.setText(("Cadastro Atualizado com sucesso!"));
         }else{
             label01.setText(("ID invalido!"));
         }
     }
 
-    @FXML private void UpdateRegiao(ActionEvent event) {
+    @FXML private void UpdateIdComercio(ActionEvent event) {
         if(textField01.getText() != null){
             int id = Integer.parseInt(textField01.getText());
-            if(dao.atualizarRegiao(id, textField04.getText()))            
+            int c = Integer.parseInt(textField04.getText());
+            if(dao.atualizarIdComercio(id, c))            
                 label01.setText(("Cadastro Atualizado com sucesso!"));
         }else{
             label01.setText(("ID invalido!"));
@@ -76,24 +77,14 @@ public class EconomiaUpdateController implements Initializable {
     @FXML private void UpdateNascimento(ActionEvent event) {
         if(textField01.getText() != null){
             int id = Integer.parseInt(textField01.getText());
-            if(dao.atualizarNascimento(id, textField05.getText()))            
+            int i = Integer.parseInt(textField05.getText());
+            if(dao.atualizarIdIndustria(id, i))            
                 label01.setText(("Cadastro Atualizado com sucesso!"));
         }else{
             label01.setText(("ID invalido!"));
         }
     }    
-    
-    @FXML private void UpdatePaisID(ActionEvent event) {
-        if(textField01.getText() != null){
-            int id = Integer.parseInt(textField01.getText());
-            int pais = Integer.parseInt(textField06.getText());
-            if(dao.atualizarPaisID(id, pais))            
-                label01.setText(("Cadastro Atualizado com sucesso!"));
-        }else{
-            label01.setText(("ID invalido!"));
-        }
-    }
-    
+
     @FXML private void Voltar(ActionEvent event) throws Exception {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();

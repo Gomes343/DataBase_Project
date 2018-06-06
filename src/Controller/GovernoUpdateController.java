@@ -1,5 +1,6 @@
 package Controller;
 
+import DAO.GovernoDAO;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,29 +25,63 @@ import javafx.stage.Stage;
  */
 public class GovernoUpdateController implements Initializable {
     
-    
     @FXML private Label label01;
-    @FXML private Label label02;
-    @FXML private Label label03;
-    @FXML private Label label04;
-    @FXML private Label label05;
     @FXML private TextField textField01;
     @FXML private TextField textField02;
     @FXML private TextField textField03;
-    @FXML private Button buttonNome;
-    @FXML private Button buttonCPF;
+    @FXML private TextField textField04;
+    @FXML private TextField textField05;
+    @FXML private Button UpdatePartido;
+    @FXML private Button UpdateIdeologia;
+    @FXML private Button UpdateCargos;
+    @FXML private Button UpdatePaisID;
     @FXML private Button buttonVoltar;
     @FXML private Button buttonConsultar;
     
+    GovernoDAO dao = new GovernoDAO();
     
-    @FXML private void UpdateCPF(ActionEvent event) {
-
+    @FXML private void UpdatePartido(ActionEvent event) {
+        if(textField01.getText() != null){
+            int id = Integer.parseInt(textField01.getText());
+            if(dao.atualizarPartido(id, textField02.getText()))            
+                label01.setText(("Cadastro Atualizado com sucesso!"));
+        }else{
+            label01.setText(("ID invalido!"));
+        }
     }
     
-    @FXML private void UpdateNome(ActionEvent event) {
+    @FXML private void UpdateIdeologia(ActionEvent event) {
+        if(textField01.getText() != null){
+            int id = Integer.parseInt(textField01.getText());
+            if(dao.atualizarIdeologia(id, textField03.getText()))            
+                label01.setText(("Cadastro Atualizado com sucesso!"));
+        }else{
+            label01.setText(("ID invalido!"));
+        }
+    }
 
+    @FXML private void UpdateCargos(ActionEvent event) {
+        if(textField01.getText() != null){
+            int id = Integer.parseInt(textField01.getText());
+            if(dao.atualizarCargos(id, textField04.getText()))            
+                label01.setText(("Cadastro Atualizado com sucesso!"));
+        }else{
+            label01.setText(("ID invalido!"));
+        }
     }
     
+
+    
+    @FXML private void UpdatePaisID(ActionEvent event) {
+        if(textField01.getText() != null){
+            int id = Integer.parseInt(textField01.getText());
+            int pais = Integer.parseInt(textField05.getText());
+            if(dao.atualizarPaisID(id, pais))            
+                label01.setText(("Cadastro Atualizado com sucesso!"));
+        }else{
+            label01.setText(("ID invalido!"));
+        }
+    }
     @FXML private void Voltar(ActionEvent event) throws Exception {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
