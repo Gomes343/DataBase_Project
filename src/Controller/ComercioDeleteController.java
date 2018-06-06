@@ -36,9 +36,7 @@ public class ComercioDeleteController implements Initializable {
     @FXML private Button buttonDeletar;
     @FXML private Button buttonVoltar;
     @FXML private Button buttonConsultar;
-    
-    
-    
+       
     @FXML private void Voltar(ActionEvent event) throws Exception {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();

@@ -3,6 +3,7 @@ package Controller;
 
 
 
+import DAO.ComercioDAO;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -26,13 +27,49 @@ import javafx.stage.Stage;
  * @author a1700677
  */
 public class ComercioInsertController implements Initializable {
+    
+    @FXML Label label01;
+    @FXML TextField field01;
+    @FXML TextField field02;
+    @FXML TextField field03;
+    @FXML TextField field04;
+    @FXML TextField field05;
+    @FXML Button buttonVoltar;
+    @FXML Button buttonCriar;
+    @FXML Button buttonConsultar;
+    
+    
+   ComercioDAO dao = new ComercioDAO();
    
-    
-    
-    
-    
-    
-    
+   private String nome;
+   private String ramo;
+   private String porte;
+   private String localização;
+   private int SocioID;
+   
+   @FXML private void Criar(ActionEvent event){
+       
+       if(field01.getText() == null || field02.getText() == null || field03.getText() == null || field04.getText() == null || field05.getText() == null)
+           label01.setText(("Todos os campos devem ser preenchidos!"));
+           
+           
+       if(field01.getText() != null && field02.getText() != null && field03.getText() != null && field04.getText() != null && field05.getText() != null){ 
+           nome = field01.getText();
+           ramo = field02.getText();
+           porte = field03.getText();
+           localização = field04.getText();
+           SocioID = Integer.parseInt(field05.getText());
+           
+       
+       if(dao.inserir(nome, ramo, porte, localização, SocioID)){
+           label01.setText(("Cadastro realizado com sucesso!"));
+       }else{
+           label01.setText(("Erro no envio para Banco de Dados!"));
+       }   
+       }
+   }
+       
+
     @FXML private void Voltar(ActionEvent event) throws Exception {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();

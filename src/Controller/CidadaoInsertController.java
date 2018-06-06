@@ -34,9 +34,8 @@ public class CidadaoInsertController implements Initializable {
     
     
    CidadaoDAO dao = new CidadaoDAO();
-   Cidadao c = new Cidadao("nome",1,"regiao","nascimento",2);
    
-   private int cpf;
+   private String cpf;
    private String nome;
    private String regiao;
    private String nascimento;
@@ -44,23 +43,12 @@ public class CidadaoInsertController implements Initializable {
    
    @FXML private void Criar(ActionEvent event){
        
-       if(field01.getText() == null){
-           label01.setText(("CPF Não preenchido!"));
-       
-       if(field02.getText() == null)
-           label01.setText(("Nome não preenchido!"));
-       
-       if(field03.getText() == null)
-           label01.setText(("Região não preenchida!"));
-       
-       if(field04.getText() == null)
-           label01.setText(("Nascimento não preenchido!"));
-       
-       if(field05.getText() == null)
-           label01.setText(("ID do Pais não preenchido!"));
-       
-       if(field01.getText() != null || field02.getText() != null || field03.getText() != null || field04.getText() != null || field05.getText() != null){ 
-           cpf = Integer.parseInt(field01.getText());
+       if(field01.getText() == null || field02.getText() == null || field03.getText() == null || field04.getText() == null || field05.getText() == null)
+           label01.setText(("Todos os campos devem ser preenchidos!"));
+           
+           
+       if(field01.getText() != null && field02.getText() != null && field03.getText() != null && field04.getText() != null && field05.getText() != null){ 
+           cpf = field01.getText();
            nome = field02.getText();
            regiao = field03.getText();
            nascimento = field04.getText();
@@ -73,7 +61,7 @@ public class CidadaoInsertController implements Initializable {
            label01.setText(("Erro no envio para Banco de Dados!"));
        }   
        }
-   }}
+   }
        
 
    
