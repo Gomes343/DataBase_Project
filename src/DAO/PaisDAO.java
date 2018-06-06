@@ -80,7 +80,7 @@ public class PaisDAO {
         
     }
     
-    public boolean atualizarTerritorio(int id, int Territorio){
+    public boolean atualizarTerritorio(int id, String Territorio){
         //criar a SQL com variaveis
         String sql = "UPDATE Pais SET territorio = '"+Territorio+"' where id = "+id;
         

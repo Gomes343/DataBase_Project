@@ -74,8 +74,7 @@ public class PaisUpdateController implements Initializable {
     @FXML private void UpdateTerritório(ActionEvent event) {
         if(textField01.getText() != null){
             int id = Integer.parseInt(textField01.getText());
-            int t = Integer.parseInt(textField05.getText());
-            if(dao.atualizarTerritorio(id, id))            
+            if(dao.atualizarTerritorio(id, textField05.getText()))            
                 label01.setText(("Cadastro Atualizado com sucesso!"));
         }else{
             label01.setText(("ID invalido!"));
