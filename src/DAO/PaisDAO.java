@@ -21,7 +21,7 @@ public class PaisDAO {
     public boolean inserir(String nome, String idioma, String localização, String território){
         
         //criar a SQL com variaveis
-        String sql = "insert into Pais(nome, idioma, localização, território)"
+        String sql = "insert into Pais(nome, localização, território, idioma)"
                    + "values('"+nome+"','"+idioma+"','"+localização+"','"+território+")";
         
         //conectar com BD
