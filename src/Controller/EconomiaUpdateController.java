@@ -74,7 +74,7 @@ public class EconomiaUpdateController implements Initializable {
     }
     
     
-    @FXML private void UpdateNascimento(ActionEvent event) {
+    @FXML private void UpdateIdIndustria(ActionEvent event) {
         if(textField01.getText() != null){
             int id = Integer.parseInt(textField01.getText());
             int i = Integer.parseInt(textField05.getText());

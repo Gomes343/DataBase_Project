@@ -72,6 +72,17 @@ public class IndustriaUpdateController implements Initializable {
             label01.setText(("ID invalido!"));
         }
     }
+    
+
+    @FXML private void UpdateLocalização(ActionEvent event) {
+        if(textField01.getText() != null){
+            int id = Integer.parseInt(textField01.getText());
+            if(dao.atualizarLocalização(id, textField05.getText()))
+                label01.setText(("Cadastro Atualizado com sucesso!"));
+        }else{
+            label01.setText(("ID invalido!"));
+        }
+    }
 
     
     @FXML private void UpdateInvestID(ActionEvent event) {

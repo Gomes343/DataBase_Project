@@ -7,7 +7,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="239.0" prefWidth="252.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.PaisInsertController">
     <children>
-        <Button fx:id="buttonCriar" layoutX="100.0" layoutY="200.0" onAction="#buttonCriar" prefHeight="25.0" prefWidth="59.0" text="Criar" />
+        <Button fx:id="buttonCriar" layoutX="100.0" layoutY="200.0" onAction="#Criar" prefHeight="25.0" prefWidth="59.0" text="Criar" />
       <TextField fx:id="field01" layoutX="23.0" layoutY="42.0" />
       <Label alignment="CENTER" layoutY="9.0" prefHeight="17.0" prefWidth="252.0" text="Cadastro de Pais" textAlignment="CENTER" />
       <TextField fx:id="field02" layoutX="23.0" layoutY="74.0" />

@@ -80,7 +80,7 @@ public class IndustriaDAO {
         
     }
     
-    public boolean atualizarLocalização(int id, int Localização){
+    public boolean atualizarLocalização(int id, String Localização){
         //criar a SQL com variaveis
         String sql = "UPDATE Industria SET Localização = '"+Localização+"' where id = "+id;
         

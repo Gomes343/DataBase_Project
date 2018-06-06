@@ -46,7 +46,6 @@ public class MenuInicialController implements Initializable {
         caminho = "/View/Pais";
         choice = true;
     }
-    
     @FXML private void ModuloGoverno(ActionEvent event) {
         textChoice.setText("Governo");
         caminho = "/View/Governo";
