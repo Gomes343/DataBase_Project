@@ -1,5 +1,6 @@
 package Controller;
 
+import DAO.PaisDAO;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,29 +25,63 @@ import javafx.stage.Stage;
  */
 public class PaisUpdateController implements Initializable {
     
-    
     @FXML private Label label01;
-    @FXML private Label label02;
-    @FXML private Label label03;
-    @FXML private Label label04;
-    @FXML private Label label05;
     @FXML private TextField textField01;
     @FXML private TextField textField02;
     @FXML private TextField textField03;
-    @FXML private Button buttonNome;
-    @FXML private Button buttonCPF;
+    @FXML private TextField textField04;
+    @FXML private TextField textField05;
+    @FXML private Button UpdateNome;
+    @FXML private Button UpdateIdioma;
+    @FXML private Button UpdateLocalização;
+    @FXML private Button UpdateTerritório;
     @FXML private Button buttonVoltar;
     @FXML private Button buttonConsultar;
     
-    
-    @FXML private void UpdateCPF(ActionEvent event) {
-
-    }
+    PaisDAO dao = new PaisDAO();
     
     @FXML private void UpdateNome(ActionEvent event) {
-
+        if(textField01.getText() != null){
+            int id = Integer.parseInt(textField01.getText());
+            if(dao.atualizarNome(id, textField02.getText()))            
+                label01.setText(("Cadastro Atualizado com sucesso!"));
+        }else{
+            label01.setText(("ID invalido!"));
+        }
     }
     
+    @FXML private void UpdateIdioma(ActionEvent event) {
+        if(textField01.getText() != null){
+            int id = Integer.parseInt(textField01.getText());
+            if(dao.atualizarIdioma(id, textField03.getText()))            
+                label01.setText(("Cadastro Atualizado com sucesso!"));
+        }else{
+            label01.setText(("ID invalido!"));
+        }
+    }
+
+    @FXML private void UpdateLocalização(ActionEvent event) {
+        if(textField01.getText() != null){
+            int id = Integer.parseInt(textField01.getText());
+            if(dao.atualizarLocalização(id, textField04.getText()))            
+                label01.setText(("Cadastro Atualizado com sucesso!"));
+        }else{
+            label01.setText(("ID invalido!"));
+        }
+    }
+    
+    
+    @FXML private void UpdateTerritório(ActionEvent event) {
+        if(textField01.getText() != null){
+            int id = Integer.parseInt(textField01.getText());
+            int t = Integer.parseInt(textField05.getText());
+            if(dao.atualizarTerritorio(id, id))            
+                label01.setText(("Cadastro Atualizado com sucesso!"));
+        }else{
+            label01.setText(("ID invalido!"));
+        }
+    }    
+
     @FXML private void Voltar(ActionEvent event) throws Exception {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
