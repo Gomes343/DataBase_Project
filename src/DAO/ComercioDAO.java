@@ -22,7 +22,7 @@ public class ComercioDAO {
         
         //criar a SQL com variaveis
         String sql = "insert into comercio(nome,cpf,regiao,nascimento,PaisID)"
-                   + "values('"+ nome +"','"+ramo+"','"+porte+"','"+localização+"','"+SocioID+")";
+                   + "values('"+ nome +"','"+ramo+"','"+porte+"','"+localização+"','"+SocioID+"')";
         
         //conectar com BD
         conexao.conectar();

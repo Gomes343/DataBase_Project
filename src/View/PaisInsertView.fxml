@@ -14,7 +14,7 @@
       <Label layoutX="184.0" layoutY="78.0" text="Idioma" />
       <Label layoutX="184.0" layoutY="46.0" text="Nome" />
       <Button fx:id="buttonVoltar" layoutX="174.0" layoutY="200.0" onAction="#Voltar" prefHeight="25.0" prefWidth="59.0" text="Voltar" />
-      <Label alignment="CENTER" layoutY="175.0" prefHeight="17.0" prefWidth="252.0" />
+      <Label fx:id="label01" alignment="CENTER" layoutY="175.0" prefHeight="17.0" prefWidth="252.0" />
       <Button layoutX="19.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="67.0" text="Consultar" />
       <TextField fx:id="field03" layoutX="23.0" layoutY="107.0" />
       <Label layoutX="184.0" layoutY="111.0" text="Localização" />

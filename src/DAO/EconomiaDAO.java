@@ -22,7 +22,7 @@ public class EconomiaDAO {
         
         //criar a SQL com variaveis
         String sql = "insert into comercio(BolsadeValores, cotacao, idComercio)"
-                   + "values('"+ BolsadeValores +"','"+cotacao+"','"+idComercio+")";
+                   + "values('"+ BolsadeValores +"','"+cotacao+"','"+idComercio+"')";
         
         //conectar com BD
         conexao.conectar();

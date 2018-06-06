@@ -22,7 +22,7 @@ public class IndustriaDAO {
         
         //criar a SQL com variaveis
         String sql = "insert into Industria(nome, ramo, porte, localização, InvestidoresID)"
-                   + "values('"+nome+"','"+ramo+"','"+porte+"','"+localização+"','"+InvestidoresID+")";
+                   + "values('"+nome+"','"+ramo+"','"+porte+"','"+localização+"','"+InvestidoresID+"')";
         
         //conectar com BD
         conexao.conectar();

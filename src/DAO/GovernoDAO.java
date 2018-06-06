@@ -22,7 +22,7 @@ public class GovernoDAO {
         
         //criar a SQL com variaveis
         String sql = "insert into Governo(partido, ideologia, cargos, PaisID)"
-                   + "values('"+partido+"','"+ideologia+"','"+cargos+"','"+PaisID+")";
+                   + "values('"+partido+"','"+ideologia+"','"+cargos+"','"+PaisID+"')";
         
         //conectar com BD
         conexao.conectar();

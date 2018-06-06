@@ -60,9 +60,9 @@ public class GovernoDeleteController implements Initializable {
         
         
         if(dao.apagar(pa)){
-            label01.setText("CPF encontrado e apagado com Sucesso!");
+            label01.setText("Partido encontrado e apagado com Sucesso!");
         }else{
-            label01.setText("CPF Inexistente ou incorreto!");
+            label01.setText("Partido Inexistente ou incorreto!");
             textField01.setText("");
         }
         
