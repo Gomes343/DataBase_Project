@@ -14,7 +14,6 @@
       <Label layoutX="184.0" layoutY="78.0" text="Ramo" />
       <Label layoutX="184.0" layoutY="46.0" text="Nome" />
       <Button fx:id="buttonVoltar" layoutX="174.0" layoutY="234.0" onAction="#Voltar" prefHeight="25.0" prefWidth="59.0" text="Voltar" />
-      <Label alignment="CENTER" layoutY="209.0" prefHeight="17.0" prefWidth="252.0" />
       <Button layoutX="19.0" layoutY="234.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="67.0" text="Consultar" />
       <TextField fx:id="field04" layoutX="23.0" layoutY="139.0" />
       <Label layoutX="184.0" layoutY="143.0" text="Localização" />
@@ -22,5 +21,6 @@
       <Label layoutX="185.0" layoutY="176.0" text="InvestidoresID" />
       <TextField fx:id="field03" layoutX="23.0" layoutY="107.0" />
       <Label layoutX="184.0" layoutY="111.0" text="Porte" />
+      <Label fx:id="label01" alignment="CENTER" layoutY="209.0" prefHeight="17.0" prefWidth="252.0" />
    </children>
 </AnchorPane>

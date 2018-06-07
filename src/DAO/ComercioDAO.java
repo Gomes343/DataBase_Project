@@ -21,8 +21,8 @@ public class ComercioDAO {
     public boolean inserir(String nome, String ramo, String porte, String localização, int SocioID){
         
         //criar a SQL com variaveis
-        String sql = "insert into comercio(nome,cpf,regiao,nascimento,PaisID)"
-                   + "values('"+ nome +"','"+ramo+"','"+porte+"','"+localização+"','"+SocioID+"')";
+        String sql = "insert into comercio(nome,ramo,porte,localização,SocioID)"
+                   + "values('"+nome+"','"+ramo+"','"+porte+"','"+localização+"','"+SocioID+"')";
         
         //conectar com BD
         conexao.conectar();

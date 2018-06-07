@@ -45,19 +45,12 @@ public class EconomiaInsertController implements Initializable {
    private int idIndustria;
    
     @FXML private void Criar(ActionEvent event){
-       
-       if(field03.getText() != null && field04.getText() != null)
-           label01.setText(("Informe ou o Comercio ou a Industria!"));
-       
-       if(field01.getText() == null || field02.getText() == null || field03.getText() == null || field04.getText() == null)
-           label01.setText(("Todos os campos devem ser preenchidos!"));
-           
-           
+
        if(field01.getText() != null && field02.getText() != null && field03.getText() != null && field04.getText() == null)
            BolsadeValores = field01.getText();
            cotacao = Double.parseDouble(field02.getText());
            idComercio = Integer.parseInt(field03.getText());
-           idIndustria = Integer.parseInt(field04.getText());           
+           //idIndustria = Integer.parseInt(field04.getText());           
        
        if(dao.inserirC(BolsadeValores, cotacao, idComercio)){
            label01.setText(("Cadastro realizado com sucesso!"));
@@ -65,11 +58,11 @@ public class EconomiaInsertController implements Initializable {
            label01.setText(("Erro no envio para Banco de Dados!"));
        }   
        
-       
+       /*
        if(field01.getText() != null && field02.getText() != null && field03.getText() == null && field04.getText() != null){
            BolsadeValores = field01.getText();
            cotacao = Double.parseDouble(field02.getText());
-           idComercio = Integer.parseInt(field03.getText());
+           //idComercio = Integer.parseInt(field03.getText());
            idIndustria = Integer.parseInt(field04.getText());           
        
        if(dao.inserirI(BolsadeValores, cotacao, idIndustria)){
@@ -78,7 +71,7 @@ public class EconomiaInsertController implements Initializable {
            label01.setText(("Erro no envio para Banco de Dados!"));
        }   
        
-       }
+       }*/
        
        
    }

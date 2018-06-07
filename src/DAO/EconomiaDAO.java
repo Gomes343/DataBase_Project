@@ -21,8 +21,8 @@ public class EconomiaDAO {
     public boolean inserirC(String BolsadeValores, Double cotacao, int idComercio){
         
         //criar a SQL com variaveis
-        String sql = "insert into comercio(BolsadeValores, cotacao, idComercio)"
-                   + "values('"+ BolsadeValores +"','"+cotacao+"','"+idComercio+"')";
+        String sql = "insert into economia(BolsadeValores, cotacao, idComercio, idIndustria)"
+                   + "values('"+ BolsadeValores +"','"+cotacao+"','"+idComercio+"',"+null+")";
         
         //conectar com BD
         conexao.conectar();
@@ -38,8 +38,8 @@ public class EconomiaDAO {
     public boolean inserirI(String BolsadeValores, Double cotacao, int idIndustria){
         
         //criar a SQL com variaveis
-        String sql = "insert into comercio(BolsadeValores, cotacao, idIndustria)"
-                   + "values('"+ BolsadeValores +"','"+cotacao+"','"+idIndustria+")";
+        String sql = "insert into economia(BolsadeValores, cotacao, idComercio, idIndustria)"
+                   + "values('"+ BolsadeValores+"','"+cotacao+"',"+null+",'"+idIndustria+"')";
         
         //conectar com BD
         conexao.conectar();

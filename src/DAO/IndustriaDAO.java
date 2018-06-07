@@ -21,7 +21,7 @@ public class IndustriaDAO {
     public boolean inserir(String nome, String ramo, String porte, String localização, int InvestidoresID){
         
         //criar a SQL com variaveis
-        String sql = "insert into Industria(nome, ramo, porte, localização, InvestidoresID)"
+        String sql = "insert into industria(nome,ramo,porte,localização,investidoresID)"
                    + "values('"+nome+"','"+ramo+"','"+porte+"','"+localização+"','"+InvestidoresID+"')";
         
         //conectar com BD
@@ -37,7 +37,7 @@ public class IndustriaDAO {
  
     public boolean atualizarNome(int id, String Nome){
         //criar a SQL com variaveis
-        String sql = "UPDATE Industria SET nome = '"+Nome+"' where id = "+id;
+        String sql = "UPDATE industria SET nome = '"+Nome+"' where id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -52,7 +52,7 @@ public class IndustriaDAO {
     
     public boolean atualizarRamo(int id, String Ramo){
         //criar a SQL com variaveis
-        String sql = "UPDATE Industria SET Ramo = '"+Ramo+"' where id = "+id;
+        String sql = "UPDATE industria SET Ramo = '"+Ramo+"' where id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -67,7 +67,7 @@ public class IndustriaDAO {
     
     public boolean atualizarPorte(int id, String Porte){
         //criar a SQL com variaveis
-        String sql = "UPDATE Industria SET Porte = '"+Porte+"' where id = "+id;
+        String sql = "UPDATE industria SET Porte = '"+Porte+"' where id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -82,7 +82,7 @@ public class IndustriaDAO {
     
     public boolean atualizarLocalização(int id, String Localização){
         //criar a SQL com variaveis
-        String sql = "UPDATE Industria SET Localização = '"+Localização+"' where id = "+id;
+        String sql = "UPDATE industria SET Localização = '"+Localização+"' where id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -97,7 +97,7 @@ public class IndustriaDAO {
     
     public boolean atualizarInvestidoresID(int id, int InvestidoresID){
         //criar a SQL com variaveis
-        String sql = "UPDATE Industria SET InvestidoresID = '"+InvestidoresID+"' where id = "+id;
+        String sql = "UPDATE industria SET InvestidoresID = '"+InvestidoresID+"' where id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -112,7 +112,7 @@ public class IndustriaDAO {
     
     public boolean apagar(String nome){
         //criar a SQL com variaveis
-        String sql = "DELETE FROM Industria WHERE nome = "+nome;
+        String sql = "DELETE FROM industria WHERE nome = "+nome;
         
         //conectar com BD
         conexao.conectar();
