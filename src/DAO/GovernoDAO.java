@@ -101,7 +101,7 @@ public class GovernoDAO {
         
         conexao.conectar();
         
-        sql = "DELETE FROM Governo WHERE partido = "+id;
+        sql = "DELETE FROM Governo WHERE id = "+id;
         
         //conectar com BD
         conexao.conectar();

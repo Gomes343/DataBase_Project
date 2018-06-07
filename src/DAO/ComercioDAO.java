@@ -116,7 +116,7 @@ public class ComercioDAO {
         
         conexao.conectar();
         
-        sql = "DELETE FROM Comercio WHERE nome = "+id;
+        sql = "DELETE FROM Comercio WHERE id = "+id;
         
         //conectar com BD
         conexao.conectar();

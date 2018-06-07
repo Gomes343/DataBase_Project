@@ -116,7 +116,7 @@ public class IndustriaDAO {
         
         conexao.conectar();
         
-        sql = "DELETE FROM industria WHERE nome = "+id;
+        sql = "DELETE FROM industria WHERE id = "+id;
         
         //conectar com BD
         conexao.conectar();
