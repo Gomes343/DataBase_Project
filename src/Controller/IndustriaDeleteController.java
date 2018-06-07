@@ -55,11 +55,11 @@ public class IndustriaDeleteController implements Initializable {
 }
     
     @FXML private void Apagar(ActionEvent event) {
-        String nome = textField01.getText();
+        int id = Integer.parseInt(textField01.getText());
         IndustriaDAO dao = new IndustriaDAO();
         
         
-        if(dao.apagar(nome)){
+        if(dao.apagar(id)){
             label01.setText("Nome encontrado e apagado com Sucesso!");
         }else{
             label01.setText("Nome Inexistente ou incorreto!");

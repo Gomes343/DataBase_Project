@@ -37,7 +37,7 @@ public class GovernoDAO {
  
     public boolean atualizarPartido(int id, String Partido){
         //criar a SQL com variaveis
-        String sql = "UPDATE Economia SET partido = '"+Partido+"' where id = "+id;
+        String sql = "UPDATE governo SET partido = '"+Partido+"' where id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -52,7 +52,7 @@ public class GovernoDAO {
     
     public boolean atualizarIdeologia(int id, String Ideologia){
         //criar a SQL com variaveis
-        String sql = "UPDATE Economia SET ideologia = '"+Ideologia+"' where id = "+id;
+        String sql = "UPDATE governo SET ideologia = '"+Ideologia+"' where id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -67,7 +67,7 @@ public class GovernoDAO {
     
     public boolean atualizarCargos(int id, String Cargos){
         //criar a SQL com variaveis
-        String sql = "UPDATE Economia SET Cargos = '"+Cargos+"' where id = "+id;
+        String sql = "UPDATE governo SET Cargos = '"+Cargos+"' where id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -82,7 +82,7 @@ public class GovernoDAO {
     
     public boolean atualizarPaisID(int id, int PaisID){
         //criar a SQL com variaveis
-        String sql = "UPDATE Economia SET PaisID = '"+PaisID+"' where id = "+id;
+        String sql = "UPDATE governo SET PaisID = '"+PaisID+"' where id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -95,9 +95,13 @@ public class GovernoDAO {
         
     }
     
-    public boolean apagar(String partido){
-        //criar a SQL com variaveis
-        String sql = "DELETE FROM Governo WHERE partido = "+partido;
+    public boolean apagar(int id){
+        
+        String sql = "SET foreign_key_checks = 0";
+        
+        conexao.conectar();
+        
+        sql = "DELETE FROM Governo WHERE partido = "+id;
         
         //conectar com BD
         conexao.conectar();

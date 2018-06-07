@@ -110,9 +110,13 @@ public class CidadaoDAO {
         
     }
     
-    public boolean apagar(String cpf){
-        //criar a SQL com variaveis
-        String sql = "DELETE FROM Cidadao WHERE cpf = "+cpf;
+    public boolean apagar(int id){
+        
+        String sql = "SET foreign_key_checks = 0";
+        
+        conexao.conectar();
+        
+        sql = "DELETE FROM Cidadao WHERE cpf = "+id;
         
         //conectar com BD
         conexao.conectar();

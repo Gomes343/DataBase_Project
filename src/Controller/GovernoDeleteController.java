@@ -55,11 +55,11 @@ public class GovernoDeleteController implements Initializable {
 }
     
     @FXML private void Apagar(ActionEvent event) {
-        String pa = textField01.getText();
+        int id = Integer.parseInt(textField01.getText());
         GovernoDAO dao = new GovernoDAO();
         
         
-        if(dao.apagar(pa)){
+        if(dao.apagar(id)){
             label01.setText("Partido encontrado e apagado com Sucesso!");
         }else{
             label01.setText("Partido Inexistente ou incorreto!");

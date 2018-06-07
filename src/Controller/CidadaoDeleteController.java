@@ -50,11 +50,11 @@ public class CidadaoDeleteController implements Initializable {
 }
     
     @FXML private void Apagar(ActionEvent event) {
-        String cpf = textField01.getText();
+        int id = Integer.parseInt(textField01.getText());
         CidadaoDAO dao = new CidadaoDAO();
         
         
-        if(dao.apagar(cpf)){
+        if(dao.apagar(id)){
             label01.setText("CPF encontrado e apagado com Sucesso!");
         }else{
             label01.setText("CPF Inexistente ou incorreto!");

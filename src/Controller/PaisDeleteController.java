@@ -54,11 +54,11 @@ public class PaisDeleteController implements Initializable {
 }
     
     @FXML private void Apagar(ActionEvent event) {
-        String nome = textField01.getText();
+        int id = Integer.parseInt(textField01.getText());
         PaisDAO dao = new PaisDAO();
         
         
-        if(dao.apagar(nome)){
+        if(dao.apagar(id)){
             label01.setText("nome encontrado e apagado com Sucesso!");
         }else{
             label01.setText("nome Inexistente ou incorreto!");

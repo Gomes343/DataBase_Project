@@ -95,14 +95,16 @@ public class PaisDAO {
         
     }
     
-    public boolean apagar(String nome){
-        //criar a SQL com variaveis
-        String sql = "DELETE FROM Pais WHERE nome = "+nome;
+    public boolean apagar(int id){
         
-        //conectar com BD
+        String sql = "SET foreign_key_checks = 0";
+        
         conexao.conectar();
-
-        //enviar SQL para banco de dados
+        
+        sql = "DELETE FROM pais WHERE id = "+id;
+        
+        conexao.conectar();
+        
         boolean b = conexao.executarComandosSQL(sql);
         
         //retornar erro ou ok 

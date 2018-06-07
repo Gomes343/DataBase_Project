@@ -110,9 +110,13 @@ public class ComercioDAO {
         
     }
     
-    public boolean apagar(String nome){
-        //criar a SQL com variaveis
-        String sql = "DELETE FROM Comercio WHERE nome = "+nome;
+    public boolean apagar(int id){
+        
+        String sql = "SET foreign_key_checks = 0";
+        
+        conexao.conectar();
+        
+        sql = "DELETE FROM Comercio WHERE nome = "+id;
         
         //conectar com BD
         conexao.conectar();

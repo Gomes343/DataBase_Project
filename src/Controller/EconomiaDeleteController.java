@@ -53,12 +53,11 @@ public class EconomiaDeleteController implements Initializable {
 }
     
     @FXML private void Apagar(ActionEvent event) {
-        String id = textField01.getText();
-        int x = Integer.parseInt(id);
+        int id = Integer.parseInt(textField01.getText());
         EconomiaDAO dao = new EconomiaDAO();
         
         
-        if(dao.apagar(x)){
+        if(dao.apagar(id)){
             label01.setText("CPF encontrado e apagado com Sucesso!");
         }else{
             label01.setText("CPF Inexistente ou incorreto!");

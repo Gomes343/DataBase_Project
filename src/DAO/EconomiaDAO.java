@@ -113,8 +113,12 @@ public class EconomiaDAO {
     }
     
     public boolean apagar(int id){
-        //criar a SQL com variaveis
-        String sql = "DELETE FROM Economia WHERE id = "+id;
+        
+        String sql = "SET foreign_key_checks = 0";
+        
+        conexao.conectar();
+        
+        sql = "DELETE FROM Economia WHERE id = "+id;
         
         //conectar com BD
         conexao.conectar();
