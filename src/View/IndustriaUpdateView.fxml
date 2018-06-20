@@ -13,7 +13,7 @@
       <TextField fx:id="textField03" layoutX="23.0" layoutY="103.0" />
       <Label layoutX="184.0" layoutY="107.0" text="Ramo" />
       <Button fx:id="buttonVoltar" layoutX="189.0" layoutY="268.0" onAction="#Voltar" prefHeight="25.0" prefWidth="84.0" text="Voltar" />
-      <Label alignment="CENTER" layoutX="42.0" layoutY="242.0" prefHeight="17.0" prefWidth="236.0" />
+      <Label fx:id="label01" alignment="CENTER" layoutX="42.0" layoutY="242.0" prefHeight="17.0" prefWidth="236.0" />
       <Button layoutX="48.0" layoutY="268.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Consultar" />
       <TextField fx:id="textField01" layoutX="22.0" layoutY="37.0" prefHeight="25.0" prefWidth="52.0" />
       <Label layoutX="83.0" layoutY="41.0" text="Id" />

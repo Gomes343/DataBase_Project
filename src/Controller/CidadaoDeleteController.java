@@ -55,9 +55,9 @@ public class CidadaoDeleteController implements Initializable {
         
         
         if(dao.apagar(id)){
-            label01.setText("CPF encontrado e apagado com Sucesso!");
+            label01.setText("ID encontrado e apagado com Sucesso!");
         }else{
-            label01.setText("CPF Inexistente ou incorreto!");
+            label01.setText("ID Inexistente ou incorreto!");
             textField01.setText("");
         }
     }

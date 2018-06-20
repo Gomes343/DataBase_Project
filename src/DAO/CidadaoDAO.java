@@ -116,7 +116,7 @@ public class CidadaoDAO {
         
         conexao.conectar();
         
-        sql = "DELETE FROM Cidadao WHERE cpf = "+id;
+        sql = "DELETE FROM Cidadao WHERE id = "+id;
         
         //conectar com BD
         conexao.conectar();
@@ -129,9 +129,9 @@ public class CidadaoDAO {
             
     }
    
-    public boolean apagarCPF(String cpf){
+    public boolean apagarCPF(int id){
         //criar a SQL com variaveis
-        String sql = "DELETE FROM cliente WHERE cpf = "+cpf+";";
+        String sql = "DELETE FROM cliente WHERE id = "+id+";";
         
         //conectar com BD
         conexao.conectar();

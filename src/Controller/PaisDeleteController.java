@@ -59,9 +59,9 @@ public class PaisDeleteController implements Initializable {
         
         
         if(dao.apagar(id)){
-            label01.setText("nome encontrado e apagado com Sucesso!");
+            label01.setText("ID encontrado e apagado com Sucesso!");
         }else{
-            label01.setText("nome Inexistente ou incorreto!");
+            label01.setText("ID Inexistente ou incorreto!");
             textField01.setText("");
         }
     }

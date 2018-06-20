@@ -58,7 +58,7 @@ public class EconomiaInsertController implements Initializable {
            label01.setText(("Erro no envio para Banco de Dados!"));
        }   
        
-       /*
+       
        if(field01.getText() != null && field02.getText() != null && field03.getText() == null && field04.getText() != null){
            BolsadeValores = field01.getText();
            cotacao = Double.parseDouble(field02.getText());
@@ -71,7 +71,7 @@ public class EconomiaInsertController implements Initializable {
            label01.setText(("Erro no envio para Banco de Dados!"));
        }   
        
-       }*/
+       }
        
        
    }
