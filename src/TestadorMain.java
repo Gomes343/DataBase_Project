@@ -7,7 +7,7 @@ public class TestadorMain {
        
         EconomiaDAO dao = new EconomiaDAO();
         
-        dao.inserirC("TSADASD", 34.6, 1);
+        dao.inserirI("TSADASD", 34, 5);
         
         
     }

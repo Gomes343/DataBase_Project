@@ -54,7 +54,7 @@ public class EconomiaUpdateController implements Initializable {
     @FXML private void UpdateCotacao(ActionEvent event) {
         if(textField01.getText() != null){
             int id = Integer.parseInt(textField01.getText());
-            double d = Double.parseDouble(textField03.getText());
+            int d = Integer.parseInt(textField03.getText());
             if(dao.atualizarCotacao(id, d))            
                 label01.setText(("Cadastro Atualizado com sucesso!"));
         }else{

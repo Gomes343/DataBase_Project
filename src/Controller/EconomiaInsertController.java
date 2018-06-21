@@ -34,21 +34,27 @@ public class EconomiaInsertController implements Initializable {
     @FXML TextField field03;
     @FXML TextField field04;
     @FXML Button buttonVoltar;
-    @FXML Button buttonCriar;
+    @FXML Button buttonCriar1;
+    @FXML Button buttonCriar2;
     @FXML Button buttonConsultar;
     
    EconomiaDAO dao = new EconomiaDAO();
    
    private String BolsadeValores;
-   private Double cotacao;
+   private int cotacao;
    private int idComercio;
    private int idIndustria;
    
-    @FXML private void Criar(ActionEvent event){
+    @FXML private void CriarComercio(ActionEvent event){
 
-       if(field01.getText() != null && field02.getText() != null && field03.getText() != null && field04.getText() == null)
+  
+        
+        
+        
+        if(field03 != null){
+
            BolsadeValores = field01.getText();
-           cotacao = Double.parseDouble(field02.getText());
+           cotacao = Integer.parseInt(field02.getText());
            idComercio = Integer.parseInt(field03.getText());
            //idIndustria = Integer.parseInt(field04.getText());           
        
@@ -56,12 +62,24 @@ public class EconomiaInsertController implements Initializable {
            label01.setText(("Cadastro realizado com sucesso!"));
        }else{
            label01.setText(("Erro no envio para Banco de Dados!"));
-       }   
+       }
        
        
-       if(field01.getText() != null && field02.getText() != null && field03.getText() == null && field04.getText() != null){
+       
+        }
+        
+        
+       
+ 
+   }
+    
+    
+    @FXML private void CriarIndustria(ActionEvent event){
+          
+        if(field04 != null){
+    
            BolsadeValores = field01.getText();
-           cotacao = Double.parseDouble(field02.getText());
+           cotacao = Integer.parseInt(field02.getText());
            //idComercio = Integer.parseInt(field03.getText());
            idIndustria = Integer.parseInt(field04.getText());           
        
@@ -70,13 +88,10 @@ public class EconomiaInsertController implements Initializable {
        }else{
            label01.setText(("Erro no envio para Banco de Dados!"));
        }   
-       
-       }
-       
-       
-   }
+
+        }
         
-    
+    }
     @FXML private void Voltar(ActionEvent event) throws Exception {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();

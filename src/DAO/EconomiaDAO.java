@@ -18,11 +18,11 @@ public class EconomiaDAO {
     }
     
     
-    public boolean inserirC(String BolsadeValores, Double cotacao, int idComercio){
+    public boolean inserirC(String BolsadeValores, int cotacao, int idComercio){
         
         //criar a SQL com variaveis
         String sql = "insert into economia(BolsadeValores, cotacao, idComercio, idIndustria)"
-                   + "values('"+BolsadeValores+"','"+cotacao+"','"+idComercio+"',"+null+")";
+                   + "values('"+BolsadeValores+"','"+cotacao+"','"+idComercio+"',null)";
         
         //conectar com BD
         conexao.conectar();
@@ -35,11 +35,11 @@ public class EconomiaDAO {
         
     }
     
-    public boolean inserirI(String BolsadeValores, Double cotacao, int idIndustria){
+    public boolean inserirI(String BolsadeValores, int cotacao, int idIndustria){
         
         //criar a SQL com variaveis
         String sql = "insert into economia(BolsadeValores, cotacao, idComercio, idIndustria)"
-                   + "values('"+ BolsadeValores+"','"+cotacao+"',"+null+",'"+idIndustria+"')";
+                   + "values('"+BolsadeValores+"','"+cotacao+"',"+null+",'"+idIndustria+"')";
         
         //conectar com BD
         conexao.conectar();
@@ -67,7 +67,7 @@ public class EconomiaDAO {
         
     }
     
-    public boolean atualizarCotacao(int id, Double Cotacao){
+    public boolean atualizarCotacao(int id, int Cotacao){
         //criar a SQL com variaveis
         String sql = "UPDATE Economia SET Cotacao = '"+Cotacao+"' where id = "+id;
         
